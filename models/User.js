@@ -40,8 +40,14 @@ User.init(
   {
     hooks: {
       async beforeCreate(newUserData) {
-        newUserData.password = await bcrypt.hash(newUserData.passoword, 10);
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
+      },
+      async beforeBulkCreate(users, options) {
+        for (const user of users) {
+          user.password = await bcrypt.hash(user.password, 10);
+        }
+        return users;
       },
       async beforeUpdate(updatedUserData) {
         updatedUserData.password = await bcrypt.hash(
