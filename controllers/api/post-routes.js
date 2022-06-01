@@ -67,9 +67,9 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
   /* req.body should look like this...
     {
-      "title": "test",
+      "title": "Test Title",
       "post_content": "This is a test post.",
-      "user-id": 1
+      "user_id": 1
     }
   */
   Post.create(req.body)
