@@ -4,7 +4,6 @@ const withAuth = require("../../utils/auth");
 
 // Get all posts
 router.get("/", (req, res) => {
-  console.log("====================");
   Post.findAll({
     order: [["created_at", "DESC"]],
     include: [
