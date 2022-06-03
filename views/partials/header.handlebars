@@ -1,15 +1,20 @@
-<header class="d-flex justify-content-between align-items-center">
-  <h2>
-    <a href="/" class="">The Tech Blog</a>
-  </h2>
+<header>
 
-  <nav class="fs-4">
-    {{#if loggedIn}}
-      <a href="/dashboard">dashboard</a>
-      <button id="logout">logout</button>
-    {{else}}
-      <a href="/login">login</a>
-    {{/if}}
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">The Tech Blog</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="/">Home</a>
+          {{#if loggedIn}}
+            <a class="nav-link" href="/dashboard">Dashboard</a>
+            <a class="nav-link" href="/logout">Logout</a>
+          {{else}}
+            <a class="nav-link" href="/login">Login</a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
   </nav>
 
   {{#if loggedIn}}

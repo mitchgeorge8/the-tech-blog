@@ -1,7 +1,7 @@
 module.exports = {
   limitText: function (string) {
-    if (string.length > 300) {
-      return string.substring(0, 300) + "...";
+    if (string.length > 500) {
+      return string.substring(0, 500) + "...";
     }
     return string;
   },
