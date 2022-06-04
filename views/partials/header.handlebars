@@ -8,16 +8,17 @@
           <a class="nav-link" href="/">Home</a>
           {{#if loggedIn}}
             <a class="nav-link" href="/dashboard">Dashboard</a>
-            <a class="nav-link" href="/log-out">Log Out</a>
+            <a class="nav-link" href="/" id="log-out">Log Out</a>
           {{else}}
             <a class="nav-link" href="/log-in">Log In</a>
           {{/if}}
         </div>
       </div>
+      <span class="navbar-brand fs-6 text-white text-opacity-50">{{username}}</span>
     </div>
   </nav>
 
   {{#if loggedIn}}
-    <script src="/javascript/logout.js"></script>
+    <script src="/javascript/log-out.js"></script>
   {{/if}}
 </header>
