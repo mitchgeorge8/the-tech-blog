@@ -18,5 +18,9 @@
 {{/with}}
 
 <div class="container">
-  {{> comments post.comments}}
+  {{> comments}}
 </div>
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
