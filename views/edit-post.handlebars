@@ -1,0 +1,29 @@
+<section>
+  <h4 class="text-center mt-2">Edit Post</h4>
+  <div class="container">
+      <div class="card my-3 border-dark shadow-sm">
+        <div class="card-body">
+          <form class="edit-post-form">
+            <label for="inputTitle" class="col-form-label pt-0">Title</label>
+            <input type="text" class="form-control" id="inputTitle" value="{{post.title}}"/>
+            <label for="inputContent" class="col-form-label">Content</label>
+            <textarea
+              class="form-control"
+              aria-label="Content textarea"
+              id="inputContent"
+            >{{post.post_content}}</textarea>
+            <button type="submit" class="btn btn-primary mt-3">Save</button>
+            <button type="button" class="btn btn-primary mt-3" id="delete-post-btn">Delete</button>
+          </form>
+        </div>
+      </div>
+  </div>
+</section>
+
+<div class="container">
+  {{> comments}}
+</div>
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>

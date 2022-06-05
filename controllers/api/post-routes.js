@@ -71,7 +71,11 @@ router.post("/", (req, res) => {
       "user_id": 1
     }
   */
-  Post.create(req.body)
+  Post.create({
+    title: req.body.title,
+    post_content: req.body.post_content,
+    user_id: req.session.user_id,
+  })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
       console.log(err);
@@ -79,7 +83,7 @@ router.post("/", (req, res) => {
     });
 });
 
-// Update a post's title
+// Update a post
 router.put("/:id", (req, res) => {
   Post.update(req.body, {
     where: {
